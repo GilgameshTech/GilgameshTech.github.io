@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis: Aplikasi Perpustakaan (Lengkap)</title>
+    <title>Infografis: Aplikasi Perpustakaan (Final)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +39,9 @@
         
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">
-                Rizad: Manajemen Perpustakaan
+                Rizad & Adam: Manajemen Perpustakaan
             </h1>
-            <p class="mt-4 text-lg text-slate-400">Menyatukan Semua Konsep: Inheritance, Polymorphism, Static, Final, Generics & Varargs</p>
+            <p class="mt-4 text-lg text-slate-400">Implementasi Konsep OOP</p>
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -104,44 +104,25 @@
                     </h2>
                     
                     <div class="flex flex-wrap gap-2 mb-4 border-b border-slate-700 pb-2">
-                        <button class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700" data-target="code-shelf">Shelf.java</button>
+                        <button class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700" data-target="code-displayable">Displayable.java</button>
                         <button class="tab-btn" data-target="code-item">LibraryItem.java</button>
+                        <button class="tab-btn" data-target="code-shelf">Shelf.java</button>
                         <button class="tab-btn" data-target="code-book">Book.java</button>
                         <button class="tab-btn" data-target="code-magazine">Magazine.java</button>
                         <button class="tab-btn" data-target="code-main">LibraryManager.java</button>
                     </div>
 
                     <div id="code-content">
-                        <div id="code-shelf" class="code-container">
-                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Shelf.java - Kelas generik untuk menyimpan item sejenis.</span>
-<span class="code-keyword">import</span> java.util.ArrayList;
-<span class="code-keyword">import</span> java.util.List;
-
-<span class="code-keyword">public class</span> <span class="code-class">Shelf</span>&lt;<span class="code-generic">T</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span>&gt; {
-    <span class="code-keyword">private</span> <span class="code-class">List</span>&lt;<span class="code-generic">T</span>&gt; itemsOnShelf = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
-    <span class="code-keyword">private</span> <span class="code-class">String</span> shelfName;
-
-    <span class="code-keyword">public</span> <span class="code-method">Shelf</span>(<span class="code-class">String</span> shelfName) { <span class="code-keyword">this</span>.shelfName = shelfName; }
-
-    <span class="code-comment">// Metode ini menggunakan Varargs.</span>
-    <span class="code-keyword">public void</span> <span class="code-method">addItems</span>(<span class="code-generic">T</span>... items) {
-        <span class="code-keyword">for</span> (<span class="code-generic">T</span> item : items) {
-            itemsOnShelf.<span class="code-method">add</span>(item);
-        }
-    }
-
-    <span class="code-keyword">public void</span> <span class="code-method">displayShelfContents</span>() {
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"=== Isi Rak: "</span> + shelfName + <span class="code-string">" ==="</span>);
-        itemsOnShelf.forEach(item -> {
-            item.<span class="code-method">displayDetails</span>();
-            System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"---"</span>);
-        });
-    }
+                        <div id="code-displayable" class="code-container">
+                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Displayable.java - Interface dikembalikan!</span>
+<span class="code-comment">// Mendefinisikan 'kontrak' bahwa sebuah objek bisa menampilkan detailnya.</span>
+<span class="code-keyword">public interface</span> <span class="code-class">Displayable</span> {
+    <span class="code-keyword">void</span> <span class="code-method">displayDetails</span>();
 }</code></pre>
                         </div>
                         <div id="code-item" class="code-container" style="display:none;">
-                           <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryItem.java (Tidak ada Displayable.java, diimplementasikan langsung)</span>
-<span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> {
+                           <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryItem.java - Sekarang mengimplementasikan Displayable.</span>
+<span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> <span class="code-keyword">implements</span> <span class="code-class">Displayable</span> {
     <span class="code-keyword">private static int</span> totalItems = 0;
     <span class="code-keyword">protected</span> <span class="code-class">String</span> id;
     <span class="code-keyword">protected</span> <span class="code-class">String</span> title;
@@ -154,10 +135,37 @@
     <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>();
     <span class="code-keyword">public static int</span> <span class="code-method">getTotalItems</span>() { <span class="code-keyword">return</span> totalItems; }
     
+    <span class="code-annotation">@Override</span>
     <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Type  : "</span> + <span class="code-method">getItemType</span>());
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"ID    : "</span> + id);
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Title : "</span> + title);
+    }
+}</code></pre>
+                        </div>
+                        <div id="code-shelf" class="code-container" style="display:none;">
+                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Shelf.java - Kelas generik untuk menyimpan item sejenis.</span>
+<span class="code-keyword">import</span> java.util.ArrayList;
+<span class="code-keyword">import</span> java.util.List;
+
+<span class="code-keyword">public class</span> <span class="code-class">Shelf</span>&lt;<span class="code-generic">T</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span>&gt; {
+    <span class="code-keyword">private</span> <span class="code-class">List</span>&lt;<span class="code-generic">T</span>&gt; itemsOnShelf = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
+    <span class="code-keyword">private</span> <span class="code-class">String</span> shelfName;
+
+    <span class="code-keyword">public</span> <span class="code-method">Shelf</span>(<span class="code-class">String</span> shelfName) { <span class="code-keyword">this</span>.shelfName = shelfName; }
+
+    <span class="code-keyword">public void</span> <span class="code-method">addItems</span>(<span class="code-generic">T</span>... items) {
+        <span class="code-keyword">for</span> (<span class="code-generic">T</span> item : items) {
+            itemsOnShelf.<span class="code-method">add</span>(item);
+        }
+    }
+
+    <span class="code-keyword">public void</span> <span class="code-method">displayShelfContents</span>() {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"=== Isi Rak: "</span> + shelfName + <span class="code-string">" ==="</span>);
+        itemsOnShelf.forEach(item -> {
+            item.<span class="code-method">displayDetails</span>();
+            System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"---"</span>);
+        });
     }
 }</code></pre>
                         </div>
