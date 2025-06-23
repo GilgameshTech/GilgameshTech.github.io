@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis: Aplikasi Perpustakaan (Final)</title>
+    <title>Infografis: Aplikasi Perpustakaan (Final & Lengkap)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,8 @@
                         <li class="flex items-center"><span class="w-3 h-3 bg-amber-400 rounded-full mr-3"></span><code class="text-amber-300">LibraryManager.java</code> (Main Class)</li>
                     </ul>
                 </div>
-
+                
+                <!-- DIAGRAM ARSITEKTUR DIKEMBALIKAN! -->
                 <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700">
                     <h2 class="text-2xl font-bold mb-6 text-emerald-400 flex items-center">
                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
@@ -93,6 +94,16 @@
                          <div class="p-3 border-2 border-amber-400 rounded-lg bg-amber-900/50">LibraryManager</div>
                     </div>
                 </div>
+                
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-400 flex items-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v10a1 1 0 001 1h12a1 1 0 001-1V5a1 1 0 000-2H4a1 1 0 00-1-1H3zm9.707 4.707a1 1 0 00-1.414-1.414L9 8.586 7.707 7.293a1 1 0 00-1.414 1.414L7.586 10l-1.293 1.293a1 1 0 101.414 1.414L9 11.414l1.293 1.293a1 1 0 001.414-1.414L10.414 10l1.293-1.293z" clip-rule="evenodd" /></svg>
+                        Contoh Output
+                    </h2>
+                    <div class="bg-black p-4 rounded-lg">
+                        <img src="assets/contoh_output.png" alt="Contoh output kode di terminal" class="rounded-md w-full">
+                    </div>
+                </div>
 
             </div>
 
@@ -114,14 +125,13 @@
 
                     <div id="code-content">
                         <div id="code-displayable" class="code-container">
-                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Displayable.java - Interface dikembalikan!</span>
-<span class="code-comment">// Mendefinisikan 'kontrak' bahwa sebuah objek bisa menampilkan detailnya.</span>
+                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Displayable.java - Interface yang mendefinisikan 'kontrak'.</span>
 <span class="code-keyword">public interface</span> <span class="code-class">Displayable</span> {
     <span class="code-keyword">void</span> <span class="code-method">displayDetails</span>();
 }</code></pre>
                         </div>
                         <div id="code-item" class="code-container" style="display:none;">
-                           <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryItem.java - Sekarang mengimplementasikan Displayable.</span>
+                           <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryItem.java - Kelas abstrak yang mengimplementasikan Displayable.</span>
 <span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> <span class="code-keyword">implements</span> <span class="code-class">Displayable</span> {
     <span class="code-keyword">private static int</span> totalItems = 0;
     <span class="code-keyword">protected</span> <span class="code-class">String</span> id;
@@ -202,7 +212,8 @@
 }</code></pre>
                         </div>
                         <div id="code-main" class="code-container" style="display:none;">
-                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
+                            <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryManager.java - Konten diperbarui sesuai permintaan.</span>
+<span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
     <span class="code-keyword">public static final</span> <span class="code-class">String</span> LIBRARY_NAME = <span class="code-string">"The Digital Athenaeum"</span>;
 
     <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
@@ -213,13 +224,13 @@
         <span class="code-class">Shelf</span>&lt;<span class="code-class">Magazine</span>&gt; magazineRack = <span class="code-keyword">new</span> <span class="code-class">Shelf</span>&lt;&gt;(<span class="code-string">"Sains & Pengetahuan"</span>);
         
         bookShelf.<span class="code-method">addItems</span>(
-            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-001"</span>, <span class="code-string">"The Hobbit"</span>, <span class="code-string">"J.R.R. Tolkien"</span>),
-            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-002"</span>, <span class="code-string">"Dune"</span>, <span class="code-string">"Frank Herbert"</span>)
+            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-001"</span>, <span class="code-string">"The Gobbit"</span>, <span class="code-string">"J.R.R. Tokek"</span>),
+            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-002"</span>, <span class="code-string">"Garry Potter"</span>, <span class="code-string">"Adam Yes"</span>)
         );
 
         magazineRack.<span class="code-method">addItems</span>(
             <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-001"</span>, <span class="code-string">"National Geographic"</span>, 142),
-            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-002"</span>, <span class="code-string">"Scientific American"</span>, 329)
+            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-002"</span>, <span class="code-string">"Scientific Lemurian"</span>, 329)
         );
 
         bookShelf.<span class="code-method">displayShelfContents</span>();
