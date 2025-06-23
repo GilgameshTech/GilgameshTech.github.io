@@ -1,468 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CobaCoba: Struktur Aplikasi Java</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            body {
-                font-family: "Inter", sans-serif;
-            }
-            .code-block {
-                background-color: #1e293b; /* slate-800 */
-                color: #e2e8f0; /* slate-200 */
-                border-radius: 0.5rem;
-                padding: 1rem;
-                overflow-x: auto;
-                font-size: 0.875rem;
-            }
-            .code-keyword {
-                color: #93c5fd;
-            } /* blue-300 */
-            .code-class {
-                color: #6ee7b7;
-            } /* emerald-300 */
-            .code-string {
-                color: #fde047;
-            } /* yellow-300 */
-            .code-comment {
-                color: #94a3b8;
-            } /* slate-400 */
-            .code-method {
-                color: #a5b4fc;
-            } /* indigo-300 */
-            .tab-btn.active {
-                background-color: #3b82f6; /* blue-600 */
-                color: #ffffff;
-            }
-        </style>
-    </head>
-    <body class="bg-slate-900 text-slate-200">
-        <div class="container mx-auto p-4 md:p-8">
-            <!-- Judul Utama -->
-            <header class="text-center mb-12">
-                <h1
-                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text"
-                >
-                    Struktur Aplikasi Java Sederhana
-                </h1>
-                <p class="mt-4 text-lg text-slate-400">
-                    Visualisasi Arsitektur Proyek Manajemen Entitas
-                </p>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis: Aplikasi Perpustakaan (Lengkap)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .code-block {
+            background-color: #1e293b; /* slate-800 */
+            color: #e2e8f0; /* slate-200 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        .code-keyword { color: #93c5fd; } /* blue-300 */
+        .code-class { color: #6ee7b7; } /* emerald-300 */
+        .code-string { color: #fde047; } /* yellow-300 */
+        .code-comment { color: #94a3b8; } /* slate-400 */
+        .code-method { color: #a5b4fc; } /* indigo-300 */
+        .code-annotation { color: #f472b6; } /* pink-400 */
+        .code-generic { color: #f0abfc; } /* fuchsia-300 */
+        .tab-btn.active {
+            background-color: #3b82f6; /* blue-600 */
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
 
-            <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                <!-- Kolom Kiri: Arsitektur dan Komponen -->
-                <div class="lg:col-span-2 flex flex-col gap-8">
-                    <!-- Card: Komponen Utama -->
-                    <div
-                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700"
-                    >
-                        <h2
-                            class="text-2xl font-bold mb-4 text-emerald-400 flex items-center"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6 mr-2"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                                />
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text">
+                Manajemen Perpustakaan (Versi Lengkap)
+            </h1>
+            <p class="mt-4 text-lg text-slate-400">Menyatukan Semua Konsep: Inheritance, Polymorphism, Static, Final, Generics & Varargs</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+            <div class="lg:col-span-2 flex flex-col gap-8">
+                
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-400 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+                        Komponen Proyek
+                    </h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="w-3 h-3 bg-green-400 rounded-full mr-3"></span><code class="text-green-300">Displayable.java</code> (Interface)</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-sky-400 rounded-full mr-3"></span><code class="text-sky-300">LibraryItem.java</code> (Abstract Class)</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-violet-400 rounded-full mr-3"></span><code class="text-violet-300">Book.java</code> (Class)</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-violet-400 rounded-full mr-3"></span><code class="text-violet-300">Magazine.java</code> (Class)</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-fuchsia-400 rounded-full mr-3"></span><code class="text-fuchsia-300">Shelf.java</code> (Generic Class)</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-amber-400 rounded-full mr-3"></span><code class="text-amber-300">LibraryManager.java</code> (Main Class)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold mb-6 text-emerald-400 flex items-center">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        Diagram Arsitektur
+                    </h2>
+                    <div class="relative text-center text-sm font-mono p-4">
+                        <div class="p-3 border-2 border-dashed border-green-400 rounded-lg inline-block">Displayable</div>
+                        <div class="h-8 w-px bg-slate-600 mx-auto"></div>
+                        <div class="p-3 border-2 border-sky-400 rounded-lg inline-block bg-sky-900/50">LibraryItem (Abstract)</div>
+
+                        <div class="absolute w-full mt-2 flex justify-between items-center top-full left-0 px-4 transform -translate-y-4">
+                            <svg class="w-16 h-12 text-slate-600 transform -scale-x-100" fill="none" viewBox="0 0 70 50" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3" />
                             </svg>
-                            Komponen Projek
-                        </h2>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <span
-                                    class="w-3 h-3 bg-green-400 rounded-full mr-3"
-                                ></span
-                                ><code class="text-green-300">Action.java</code>
-                                (Interface)
-                            </li>
-                            <li class="flex items-center">
-                                <span
-                                    class="w-3 h-3 bg-sky-400 rounded-full mr-3"
-                                ></span
-                                ><code class="text-sky-300">Entity.java</code>
-                                (Abstract Class)
-                            </li>
-                            <li class="flex items-center">
-                                <span
-                                    class="w-3 h-3 bg-violet-400 rounded-full mr-3"
-                                ></span
-                                ><code class="text-violet-300">Hero.java</code>
-                                (Class)
-                            </li>
-                            <li class="flex items-center">
-                                <span
-                                    class="w-3 h-3 bg-violet-400 rounded-full mr-3"
-                                ></span
-                                ><code class="text-violet-300">Bot.java</code>
-                                (Class)
-                            </li>
-                            <li class="flex items-center">
-                                <span
-                                    class="w-3 h-3 bg-amber-400 rounded-full mr-3"
-                                ></span
-                                ><code class="text-amber-300"
-                                    >EntityManager.java</code
-                                >
-                                (Main Class)
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Card: Diagram Arsitektur -->
-                    <div
-                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700"
-                    >
-                        <h2
-                            class="text-2xl font-bold mb-6 text-emerald-400 flex items-center"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6 mr-2"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                                />
+                             <svg class="w-16 h-12 text-slate-600" fill="none" viewBox="0 0 70 50" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3" />
                             </svg>
-                            Diagram
-                        </h2>
-                        <div class="relative text-center text-sm font-mono">
-                            <div
-                                class="p-3 border-2 border-dashed border-green-400 rounded-lg inline-block"
-                            >
-                                Action (Interface)
-                            </div>
-
-                            <div class="my-4 flex justify-center">
-                                <svg
-                                    class="w-4 h-12 text-slate-500"
-                                    fill="none"
-                                    viewBox="0 0 10 50"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 48V2M2 5l3-3 3 3"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div
-                                class="p-3 border-2 border-sky-400 rounded-lg inline-block bg-sky-900/50"
-                            >
-                                Entity (Abstract)
-                            </div>
-
-                            <div
-                                class="absolute w-full mt-4 flex justify-between items-center top-full left-0 px-4"
-                            >
-                                <svg
-                                    class="w-16 h-12 text-slate-500 transform -scale-x-100"
-                                    fill="none"
-                                    viewBox="0 0 70 50"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3"
-                                    />
-                                </svg>
-                                <svg
-                                    class="w-16 h-12 text-slate-500"
-                                    fill="none"
-                                    viewBox="0 0 70 50"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div class="mt-20 grid grid-cols-2 gap-4">
-                                <div
-                                    class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
-                                >
-                                    Hero
-                                </div>
-                                <div
-                                    class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
-                                >
-                                    Bot
-                                </div>
-                            </div>
-                            <div class="mt-4 text-slate-500 text-xs italic">
-                                extends
-                            </div>
                         </div>
+                        
+                        <div class="mt-14 grid grid-cols-2 gap-4">
+                             <div class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50">Book</div>
+                             <div class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50">Magazine</div>
+                        </div>
+                         <div class="h-8 w-px bg-slate-600 mx-auto"></div>
+                         <div class="p-3 border-2 border-fuchsia-400 rounded-lg bg-fuchsia-900/50">Shelf&lt;T&gt;</div>
+                         <div class="mt-1 text-xs text-slate-500">uses</div>
+                         <div class="h-4 w-px bg-slate-600 mx-auto"></div>
+                         <div class="p-3 border-2 border-amber-400 rounded-lg bg-amber-900/50">LibraryManager</div>
                     </div>
                 </div>
 
-                <!-- Kolom Kanan: Kode Sumber -->
-                <div class="lg:col-span-3 flex flex-col">
-                    <div
-                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700 h-full"
-                    >
-                        <h2
-                            class="text-2xl font-bold mb-4 text-emerald-400 flex items-center"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6 mr-2"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                                />
-                            </svg>
-                            Source Code
-                        </h2>
+            </div>
 
-                        <!-- Tab Buttons -->
-                        <div
-                            class="flex flex-wrap gap-2 mb-4 border-b border-slate-700 pb-2"
-                        >
-                            <button
-                                class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700 hover:bg-blue-600 transition-colors duration-200"
-                                data-target="code-action"
-                            >
-                                Action.java
-                            </button>
-                            <button class="tab-btn" data-target="code-entity">
-                                Entity.java
-                            </button>
-                            <button class="tab-btn" data-target="code-hero">
-                                Hero.java
-                            </button>
-                            <button class="tab-btn" data-target="code-bot">
-                                Bot.java
-                            </button>
-                            <button class="tab-btn" data-target="code-main">
-                                EntityManager.java
-                            </button>
-                        </div>
+            <div class="lg:col-span-3 flex flex-col">
+                <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700 h-full">
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-400 flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        Kode Sumber
+                    </h2>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4 border-b border-slate-700 pb-2">
+                        <button class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700" data-target="code-shelf">Shelf.java</button>
+                        <button class="tab-btn" data-target="code-item">LibraryItem.java</button>
+                        <button class="tab-btn" data-target="code-book">Book.java</button>
+                        <button class="tab-btn" data-target="code-magazine">Magazine.java</button>
+                        <button class="tab-btn" data-target="code-main">LibraryManager.java</button>
+                    </div>
 
-                        <!-- Tab Content -->
-                        <div id="code-content">
-                            <div id="code-action" class="code-container">
-                                <pre
-                                    class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Action.java - Defines the basic contract for entities.</span>
-<span class="code-keyword">public interface</span> <span class="code-class">Action</span> {
-    <span class="code-keyword">void</span> <span class="code-method">displayStatus</span>();
-    <span class="code-class">String</span> <span class="code-method">getEntityType</span>();
-}</code></pre>
-                            </div>
-                            <div
-                                id="code-entity"
-                                class="code-container"
-                                style="display: none"
-                            >
-                                <pre
-                                    class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Entity.java - The abstract base class for all entities.</span>
-<span class="code-keyword">public abstract class</span> <span class="code-class">Entity</span> <span class="code-keyword">implements</span> <span class="code-class">Action</span> {
-    <span class="code-keyword">protected</span> <span class="code-class">String</span> name;
-    <span class="code-keyword">protected int</span> level;
-
-    <span class="code-keyword">public</span> <span class="code-method">Entity</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level) {
-        <span class="code-keyword">this</span>.name = name;
-        <span class="code-keyword">this</span>.level = level;
-    }
-
-    <span class="code-comment">// Abstract method, must be implemented by subclasses.</span>
-    <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>();
-
-    <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Name   : "</span> + <span class="code-keyword">this</span>.name);
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Level  : "</span> + <span class="code-keyword">this</span>.level);
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Type   : "</span> + <span class="code-keyword">this</span>.<span class="code-method">getEntityType</span>());
-    }
-}</code></pre>
-                            </div>
-                            <div
-                                id="code-hero"
-                                class="code-container"
-                                style="display: none"
-                            >
-                                <pre
-                                    class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Hero.java - A concrete class derived from Entity.</span>
-<span class="code-keyword">public class</span> <span class="code-class">Hero</span> <span class="code-keyword">extends</span> <span class="code-class">Entity</span> {
-    <span class="code-keyword">private</span> <span class="code-class">String</span> weapon;
-
-    <span class="code-keyword">public</span> <span class="code-method">Hero</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level, <span class="code-class">String</span> weapon) {
-        <span class="code-keyword">super</span>(name, level);
-        <span class="code-keyword">this</span>.weapon = weapon;
-    }
-
-    <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Hero"</span>;
-    }
-
-    <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
-        <span class="code-keyword">super</span>.<span class="code-method">displayStatus</span>();
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Weapon: "</span> + <span class="code-keyword">this</span>.weapon);
-    }
-}</code></pre>
-                            </div>
-                            <div
-                                id="code-bot"
-                                class="code-container"
-                                style="display: none"
-                            >
-                                <pre
-                                    class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Bot.java - A concrete class derived from Entity.</span>
-<span class="code-keyword">public class</span> <span class="code-class">Bot</span> <span class="code-keyword">extends</span> <span class="code-class">Entity</span> {
-    <span class="code-keyword">private</span> <span class="code-class">String</span> botId;
-
-    <span class="code-keyword">public</span> <span class="code-method">Bot</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level, <span class="code-class">String</span> botId) {
-        <span class="code-keyword">super</span>(name, level);
-        <span class="code-keyword">this</span>.botId = botId;
-    }
-
-    <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Bot"</span>;
-    }
-
-    <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
-        <span class="code-keyword">super</span>.<span class="code-method">displayStatus</span>();
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Bot ID : "</span> + <span class="code-keyword">this</span>.botId);
-    }
-}</code></pre>
-                            </div>
-                            <div
-                                id="code-main"
-                                class="code-container"
-                                style="display: none"
-                            >
-                                <pre
-                                    class="code-block"
-                                ><code class="language-java"><span class="code-comment">// EntityManager.java - The main entry point of the application.</span>
+                    <div id="code-content">
+                        <div id="code-shelf" class="code-container">
+                            <pre class="code-block"><code class="language-java"><span class="code-comment">// Shelf.java - Kelas generik untuk menyimpan item sejenis.</span>
 <span class="code-keyword">import</span> java.util.ArrayList;
 <span class="code-keyword">import</span> java.util.List;
 
-<span class="code-keyword">public class</span> <span class="code-class">EntityManager</span> {
-    <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
-        <span class="code-comment">// Polymorphism: Hero and Bot are stored as Entity.</span>
-        <span class="code-class">Entity</span> hero1 = <span class="code-keyword">new</span> <span class="code-class">Hero</span>(<span class="code-string">"Aragorn"</span>, 50, <span class="code-string">"Anduril"</span>);
-        <span class="code-class">Entity</span> bot1 = <span class="code-keyword">new</span> <span class="code-class">Bot</span>(<span class="code-string">"Sentry-01"</span>, 99, <span class="code-string">"BOT-A8B3"</span>);
+<span class="code-keyword">public class</span> <span class="code-class">Shelf</span>&lt;<span class="code-generic">T</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span>&gt; {
+    <span class="code-keyword">private</span> <span class="code-class">List</span>&lt;<span class="code-generic">T</span>&gt; itemsOnShelf = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
+    <span class="code-keyword">private</span> <span class="code-class">String</span> shelfName;
 
-        <span class="code-class">List</span>&lt;<span class="code-class">Entity</span>&gt; entityList = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
-        entityList.<span class="code-method">add</span>(hero1);
-        entityList.<span class="code-method">add</span>(bot1);
+    <span class="code-keyword">public</span> <span class="code-method">Shelf</span>(<span class="code-class">String</span> shelfName) { <span class="code-keyword">this</span>.shelfName = shelfName; }
 
-        <span class="code-keyword">for</span> (<span class="code-class">Entity</span> entity : entityList) {
-            entity.<span class="code-method">displayStatus</span>();
-            System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"-----------------"</span>);
+    <span class="code-comment">// Metode ini menggunakan Varargs.</span>
+    <span class="code-keyword">public void</span> <span class="code-method">addItems</span>(<span class="code-generic">T</span>... items) {
+        <span class="code-keyword">for</span> (<span class="code-generic">T</span> item : items) {
+            itemsOnShelf.<span class="code-method">add</span>(item);
         }
     }
+
+    <span class="code-keyword">public void</span> <span class="code-method">displayShelfContents</span>() {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"=== Isi Rak: "</span> + shelfName + <span class="code-string">" ==="</span>);
+        itemsOnShelf.forEach(item -> {
+            item.<span class="code-method">displayDetails</span>();
+            System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"---"</span>);
+        });
+    }
 }</code></pre>
-                            </div>
+                        </div>
+                        <div id="code-item" class="code-container" style="display:none;">
+                           <pre class="code-block"><code class="language-java"><span class="code-comment">// LibraryItem.java (Tidak ada Displayable.java, diimplementasikan langsung)</span>
+<span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> {
+    <span class="code-keyword">private static int</span> totalItems = 0;
+    <span class="code-keyword">protected</span> <span class="code-class">String</span> id;
+    <span class="code-keyword">protected</span> <span class="code-class">String</span> title;
+
+    <span class="code-keyword">public</span> <span class="code-method">LibraryItem</span>(<span class="code-class">String</span> id, <span class="code-class">String</span> title) {
+        <span class="code-keyword">this</span>.id = id;
+        <span class="code-keyword">this</span>.title = title;
+        totalItems++;
+    }
+    <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>();
+    <span class="code-keyword">public static int</span> <span class="code-method">getTotalItems</span>() { <span class="code-keyword">return</span> totalItems; }
+    
+    <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Type  : "</span> + <span class="code-method">getItemType</span>());
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"ID    : "</span> + id);
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Title : "</span> + title);
+    }
+}</code></pre>
+                        </div>
+                        <div id="code-book" class="code-container" style="display:none;">
+                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">Book</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span> {
+    <span class="code-keyword">private</span> <span class="code-class">String</span> author;
+    <span class="code-keyword">public</span> <span class="code-method">Book</span>(<span class="code-class">String</span> id, <span class="code-class">String</span> title, <span class="code-class">String</span> author) {
+        <span class="code-keyword">super</span>(id, title);
+        <span class="code-keyword">this</span>.author = author;
+    }
+    <span class="code-annotation">@Override</span>
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>(){ <span class="code-keyword">return</span> <span class="code-string">"Book"</span>; }
+    <span class="code-annotation">@Override</span>
+    <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">displayDetails</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Author: "</span> + author);
+    }
+}</code></pre>
+                        </div>
+                         <div id="code-magazine" class="code-container" style="display:none;">
+                           <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">Magazine</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span> {
+    <span class="code-keyword">private int</span> issueNumber;
+    <span class="code-keyword">public</span> <span class="code-method">Magazine</span>(<span class="code-class">String</span> id, <span class="code-class">String</span> title, <span class="code-keyword">int</span> issueNumber) {
+        <span class="code-keyword">super</span>(id, title);
+        <span class="code-keyword">this</span>.issueNumber = issueNumber;
+    }
+    <span class="code-annotation">@Override</span>
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>(){ <span class="code-keyword">return</span> <span class="code-string">"Magazine"</span>; }
+    <span class="code-annotation">@Override</span>
+    <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">displayDetails</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Issue : "</span> + issueNumber);
+    }
+}</code></pre>
+                        </div>
+                        <div id="code-main" class="code-container" style="display:none;">
+                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
+    <span class="code-keyword">public static final</span> <span class="code-class">String</span> LIBRARY_NAME = <span class="code-string">"The Digital Athenaeum"</span>;
+
+    <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Selamat datang di "</span> + LIBRARY_NAME);
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"================================="</span>);
+
+        <span class="code-class">Shelf</span>&lt;<span class="code-class">Book</span>&gt; bookShelf = <span class="code-keyword">new</span> <span class="code-class">Shelf</span>&lt;&gt;(<span class="code-string">"Fiksi & Petualangan"</span>);
+        <span class="code-class">Shelf</span>&lt;<span class="code-class">Magazine</span>&gt; magazineRack = <span class="code-keyword">new</span> <span class="code-class">Shelf</span>&lt;&gt;(<span class="code-string">"Sains & Pengetahuan"</span>);
+        
+        bookShelf.<span class="code-method">addItems</span>(
+            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-001"</span>, <span class="code-string">"The Hobbit"</span>, <span class="code-string">"J.R.R. Tolkien"</span>),
+            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-002"</span>, <span class="code-string">"Dune"</span>, <span class="code-string">"Frank Herbert"</span>)
+        );
+
+        magazineRack.<span class="code-method">addItems</span>(
+            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-001"</span>, <span class="code-string">"National Geographic"</span>, 142),
+            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-002"</span>, <span class="code-string">"Scientific American"</span>, 329)
+        );
+
+        bookShelf.<span class="code-method">displayShelfContents</span>();
+        magazineRack.<span class="code-method">displayShelfContents</span>();
+        
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"================================="</span>);
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Total koleksi di sistem: "</span> + <span class="code-class">LibraryItem</span>.<span class="code-method">getTotalItems</span>());
+    }
+}</code></pre>
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
+    </div>
 
-        <script>
-            // Logika untuk fungsionalitas Tab
-            const tabButtons = document.querySelectorAll(".tab-btn");
-            const codeContainers = document.querySelectorAll(".code-container");
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const codeContainers = document.querySelectorAll('.code-container');
 
             function initTabs() {
                 const firstButton = tabButtons[0];
                 if (!firstButton) return;
-
-                const firstContainerId =
-                    firstButton.getAttribute("data-target");
-                const firstContainer =
-                    document.getElementById(firstContainerId);
-
-                firstButton.classList.add("active");
-                if (firstContainer) {
-                    firstContainer.style.display = "block";
-                }
-
-                tabButtons.forEach((button) => {
-                    if (!button.classList.contains("active")) {
-                        button.classList.add(
-                            "bg-slate-700",
-                            "hover:bg-blue-600",
-                            "transition-colors",
-                            "duration-200",
-                            "px-4",
-                            "py-2",
-                            "text-sm",
-                            "rounded-md",
-                        );
+                firstButton.classList.add('active');
+                const firstContainer = document.getElementById(firstButton.dataset.target);
+                if (firstContainer) firstContainer.style.display = 'block';
+                
+                tabButtons.forEach(button => {
+                    if (!button.classList.contains('active')) {
+                         button.classList.add('bg-slate-700', 'hover:bg-blue-600', 'transition-colors', 'duration-200', 'px-4', 'py-2', 'text-sm', 'rounded-md');
                     }
-
-                    button.addEventListener("click", () => {
-                        const targetId = button.getAttribute("data-target");
-
-                        tabButtons.forEach((btn) => {
-                            btn.classList.remove("active");
-                            btn.classList.add("bg-slate-700");
-                        });
-
-                        button.classList.add("active");
-                        button.classList.remove("bg-slate-700");
-
-                        codeContainers.forEach((container) => {
-                            container.style.display = "none";
-                        });
-
-                        const targetContainer =
-                            document.getElementById(targetId);
-                        if (targetContainer) {
-                            targetContainer.style.display = "block";
-                        }
-                    });
                 });
             }
+            
+            initTabs();
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('bg-slate-700');
+                    });
+                    
+                    button.classList.add('active');
+                    button.classList.remove('bg-slate-700');
 
-            document.addEventListener("DOMContentLoaded", initTabs);
-        </script>
-    </body>
+                    codeContainers.forEach(c => c.style.display = 'none');
+                    const targetContainer = document.getElementById(targetId);
+                    if (targetContainer) targetContainer.style.display = 'block';
+                });
+            });
+        });
+    </script>
+</body>
 </html>
