@@ -51,10 +51,10 @@
                 <h1
                     class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text"
                 >
-                    Struktur Aplikasi Konsol Java
+                    Struktur Aplikasi Java Sederhana
                 </h1>
                 <p class="mt-4 text-lg text-slate-400">
-                    Visualisasi Arsitektur Proyek Manajemen Entitas Digital
+                    Visualisasi Arsitektur Proyek Manajemen Entitas
                 </p>
             </header>
 
@@ -82,30 +82,28 @@
                                     d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                                 />
                             </svg>
-                            Komponen Proyek
+                            Komponen Projek
                         </h2>
                         <ul class="space-y-3">
                             <li class="flex items-center">
                                 <span
                                     class="w-3 h-3 bg-green-400 rounded-full mr-3"
                                 ></span
-                                ><code class="text-green-300">Aksi.java</code>
+                                ><code class="text-green-300">Action.java</code>
                                 (Interface)
                             </li>
                             <li class="flex items-center">
                                 <span
                                     class="w-3 h-3 bg-sky-400 rounded-full mr-3"
                                 ></span
-                                ><code class="text-sky-300">Entitas.java</code>
+                                ><code class="text-sky-300">Entity.java</code>
                                 (Abstract Class)
                             </li>
                             <li class="flex items-center">
                                 <span
                                     class="w-3 h-3 bg-violet-400 rounded-full mr-3"
                                 ></span
-                                ><code class="text-violet-300"
-                                    >Pahlawan.java</code
-                                >
+                                ><code class="text-violet-300">Hero.java</code>
                                 (Class)
                             </li>
                             <li class="flex items-center">
@@ -120,7 +118,7 @@
                                     class="w-3 h-3 bg-amber-400 rounded-full mr-3"
                                 ></span
                                 ><code class="text-amber-300"
-                                    >ManajemenEntitas.java</code
+                                    >EntityManager.java</code
                                 >
                                 (Main Class)
                             </li>
@@ -148,13 +146,13 @@
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                                 />
                             </svg>
-                            Diagram Arsitektur
+                            Diagram
                         </h2>
                         <div class="relative text-center text-sm font-mono">
                             <div
                                 class="p-3 border-2 border-dashed border-green-400 rounded-lg inline-block"
                             >
-                                Aksi (Interface)
+                                Action (Interface)
                             </div>
 
                             <div class="my-4 flex justify-center">
@@ -176,7 +174,7 @@
                             <div
                                 class="p-3 border-2 border-sky-400 rounded-lg inline-block bg-sky-900/50"
                             >
-                                Entitas (Abstract)
+                                Entity (Abstract)
                             </div>
 
                             <div
@@ -214,7 +212,7 @@
                                 <div
                                     class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
                                 >
-                                    Pahlawan
+                                    Hero
                                 </div>
                                 <div
                                     class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
@@ -251,7 +249,7 @@
                                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                                 />
                             </svg>
-                            Kode Sumber
+                            Source Code
                         </h2>
 
                         <!-- Tab Buttons -->
@@ -260,88 +258,88 @@
                         >
                             <button
                                 class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700 hover:bg-blue-600 transition-colors duration-200"
-                                data-target="code-aksi"
+                                data-target="code-action"
                             >
-                                Aksi.java
+                                Action.java
                             </button>
-                            <button class="tab-btn" data-target="code-entitas">
-                                Entitas.java
+                            <button class="tab-btn" data-target="code-entity">
+                                Entity.java
                             </button>
-                            <button class="tab-btn" data-target="code-pahlawan">
-                                Pahlawan.java
+                            <button class="tab-btn" data-target="code-hero">
+                                Hero.java
                             </button>
                             <button class="tab-btn" data-target="code-bot">
                                 Bot.java
                             </button>
                             <button class="tab-btn" data-target="code-main">
-                                ManajemenEntitas.java
+                                EntityManager.java
                             </button>
                         </div>
 
                         <!-- Tab Content -->
                         <div id="code-content">
-                            <div id="code-aksi" class="code-container">
+                            <div id="code-action" class="code-container">
                                 <pre
                                     class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Aksi.java - Mendefinisikan kontrak atau kemampuan dasar entitas</span>
-<span class="code-keyword">public interface</span> <span class="code-class">Aksi</span> {
-    <span class="code-keyword">void</span> <span class="code-method">tampilkanStatus</span>();
-    <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>();
+                                ><code class="language-java"><span class="code-comment">// Action.java - Defines the basic contract for entities.</span>
+<span class="code-keyword">public interface</span> <span class="code-class">Action</span> {
+    <span class="code-keyword">void</span> <span class="code-method">displayStatus</span>();
+    <span class="code-class">String</span> <span class="code-method">getEntityType</span>();
 }</code></pre>
                             </div>
                             <div
-                                id="code-entitas"
+                                id="code-entity"
                                 class="code-container"
                                 style="display: none"
                             >
                                 <pre
                                     class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Entitas.java - Kelas dasar abstrak untuk semua entitas</span>
-<span class="code-keyword">public abstract class</span> <span class="code-class">Entitas</span> <span class="code-keyword">implements</span> <span class="code-class">Aksi</span> {
-    <span class="code-keyword">protected</span> <span class="code-class">String</span> nama;
+                                ><code class="language-java"><span class="code-comment">// Entity.java - The abstract base class for all entities.</span>
+<span class="code-keyword">public abstract class</span> <span class="code-class">Entity</span> <span class="code-keyword">implements</span> <span class="code-class">Action</span> {
+    <span class="code-keyword">protected</span> <span class="code-class">String</span> name;
     <span class="code-keyword">protected int</span> level;
 
-    <span class="code-keyword">public</span> <span class="code-method">Entitas</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level) {
-        <span class="code-keyword">this</span>.nama = nama;
+    <span class="code-keyword">public</span> <span class="code-method">Entity</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level) {
+        <span class="code-keyword">this</span>.name = name;
         <span class="code-keyword">this</span>.level = level;
     }
 
-    <span class="code-comment">// Metode abstract, harus diimplementasikan oleh anak kelas</span>
-    <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>();
+    <span class="code-comment">// Abstract method, must be implemented by subclasses.</span>
+    <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>();
 
     <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Nama   : "</span> + <span class="code-keyword">this</span>.nama);
+    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Name   : "</span> + <span class="code-keyword">this</span>.name);
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Level  : "</span> + <span class="code-keyword">this</span>.level);
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Tipe   : "</span> + <span class="code-keyword">this</span>.<span class="code-method">getTipeEntitas</span>());
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Type   : "</span> + <span class="code-keyword">this</span>.<span class="code-method">getEntityType</span>());
     }
 }</code></pre>
                             </div>
                             <div
-                                id="code-pahlawan"
+                                id="code-hero"
                                 class="code-container"
                                 style="display: none"
                             >
                                 <pre
                                     class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Pahlawan.java - Kelas konkret turunan dari Entitas</span>
-<span class="code-keyword">public class</span> <span class="code-class">Pahlawan</span> <span class="code-keyword">extends</span> <span class="code-class">Entitas</span> {
-    <span class="code-keyword">private</span> <span class="code-class">String</span> senjata;
+                                ><code class="language-java"><span class="code-comment">// Hero.java - A concrete class derived from Entity.</span>
+<span class="code-keyword">public class</span> <span class="code-class">Hero</span> <span class="code-keyword">extends</span> <span class="code-class">Entity</span> {
+    <span class="code-keyword">private</span> <span class="code-class">String</span> weapon;
 
-    <span class="code-keyword">public</span> <span class="code-method">Pahlawan</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level, <span class="code-class">String</span> senjata) {
-        <span class="code-keyword">super</span>(nama, level);
-        <span class="code-keyword">this</span>.senjata = senjata;
+    <span class="code-keyword">public</span> <span class="code-method">Hero</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level, <span class="code-class">String</span> weapon) {
+        <span class="code-keyword">super</span>(name, level);
+        <span class="code-keyword">this</span>.weapon = weapon;
     }
 
     <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>() {
-        <span class="code-keyword">return</span> <span class="code-string">"Pahlawan"</span>;
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Hero"</span>;
     }
 
     <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
-        <span class="code-keyword">super</span>.<span class="code-method">tampilkanStatus</span>();
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Senjata: "</span> + <span class="code-keyword">this</span>.senjata);
+    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">displayStatus</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Weapon: "</span> + <span class="code-keyword">this</span>.weapon);
     }
 }</code></pre>
                             </div>
@@ -352,24 +350,24 @@
                             >
                                 <pre
                                     class="code-block"
-                                ><code class="language-java"><span class="code-comment">// Bot.java - Kelas konkret turunan dari Entitas</span>
-<span class="code-keyword">public class</span> <span class="code-class">Bot</span> <span class="code-keyword">extends</span> <span class="code-class">Entitas</span> {
-    <span class="code-keyword">private</span> <span class="code-class">String</span> idBot;
+                                ><code class="language-java"><span class="code-comment">// Bot.java - A concrete class derived from Entity.</span>
+<span class="code-keyword">public class</span> <span class="code-class">Bot</span> <span class="code-keyword">extends</span> <span class="code-class">Entity</span> {
+    <span class="code-keyword">private</span> <span class="code-class">String</span> botId;
 
-    <span class="code-keyword">public</span> <span class="code-method">Bot</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level, <span class="code-class">String</span> idBot) {
-        <span class="code-keyword">super</span>(nama, level);
-        <span class="code-keyword">this</span>.idBot = idBot;
+    <span class="code-keyword">public</span> <span class="code-method">Bot</span>(<span class="code-class">String</span> name, <span class="code-keyword">int</span> level, <span class="code-class">String</span> botId) {
+        <span class="code-keyword">super</span>(name, level);
+        <span class="code-keyword">this</span>.botId = botId;
     }
 
     <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>() {
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getEntityType</span>() {
         <span class="code-keyword">return</span> <span class="code-string">"Bot"</span>;
     }
 
     <span class="code-keyword">@Override</span>
-    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
-        <span class="code-keyword">super</span>.<span class="code-method">tampilkanStatus</span>();
-        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Bot ID : "</span> + <span class="code-keyword">this</span>.idBot);
+    <span class="code-keyword">public void</span> <span class="code-method">displayStatus</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">displayStatus</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Bot ID : "</span> + <span class="code-keyword">this</span>.botId);
     }
 }</code></pre>
                             </div>
@@ -380,22 +378,22 @@
                             >
                                 <pre
                                     class="code-block"
-                                ><code class="language-java"><span class="code-comment">// ManajemenEntitas.java - Titik masuk utama aplikasi</span>
+                                ><code class="language-java"><span class="code-comment">// EntityManager.java - The main entry point of the application.</span>
 <span class="code-keyword">import</span> java.util.ArrayList;
 <span class="code-keyword">import</span> java.util.List;
 
-<span class="code-keyword">public class</span> <span class="code-class">ManajemenEntitas</span> {
+<span class="code-keyword">public class</span> <span class="code-class">EntityManager</span> {
     <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
-        <span class="code-comment">// Polimorfisme: Pahlawan dan Bot disimpan sebagai Entitas</span>
-        <span class="code-class">Entitas</span> pahlawan1 = <span class="code-keyword">new</span> <span class="code-class">Pahlawan</span>(<span class="code-string">"Aragorn"</span>, 50, <span class="code-string">"Anduril"</span>);
-        <span class="code-class">Entitas</span> bot1 = <span class="code-keyword">new</span> <span class="code-class">Bot</span>(<span class="code-string">"Sentry-01"</span>, 99, <span class="code-string">"BOT-A8B3"</span>);
+        <span class="code-comment">// Polymorphism: Hero and Bot are stored as Entity.</span>
+        <span class="code-class">Entity</span> hero1 = <span class="code-keyword">new</span> <span class="code-class">Hero</span>(<span class="code-string">"Aragorn"</span>, 50, <span class="code-string">"Anduril"</span>);
+        <span class="code-class">Entity</span> bot1 = <span class="code-keyword">new</span> <span class="code-class">Bot</span>(<span class="code-string">"Sentry-01"</span>, 99, <span class="code-string">"BOT-A8B3"</span>);
 
-        <span class="code-class">List</span>&lt;<span class="code-class">Entitas</span>&gt; daftarEntitas = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
-        daftarEntitas.<span class="code-method">add</span>(pahlawan1);
-        daftarEntitas.<span class="code-method">add</span>(bot1);
+        <span class="code-class">List</span>&lt;<span class="code-class">Entity</span>&gt; entityList = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
+        entityList.<span class="code-method">add</span>(hero1);
+        entityList.<span class="code-method">add</span>(bot1);
 
-        <span class="code-keyword">for</span> (<span class="code-class">Entitas</span> entitas : daftarEntitas) {
-            entitas.<span class="code-method">tampilkanStatus</span>();
+        <span class="code-keyword">for</span> (<span class="code-class">Entity</span> entity : entityList) {
+            entity.<span class="code-method">displayStatus</span>();
             System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"-----------------"</span>);
         }
     }
@@ -412,10 +410,10 @@
             const tabButtons = document.querySelectorAll(".tab-btn");
             const codeContainers = document.querySelectorAll(".code-container");
 
-            // Fungsi untuk menginisialisasi tab
             function initTabs() {
-                // Menetapkan tab pertama sebagai aktif secara default
                 const firstButton = tabButtons[0];
+                if (!firstButton) return;
+
                 const firstContainerId =
                     firstButton.getAttribute("data-target");
                 const firstContainer =
@@ -426,9 +424,7 @@
                     firstContainer.style.display = "block";
                 }
 
-                // Menambahkan event listener ke semua tombol tab
                 tabButtons.forEach((button) => {
-                    // Atur gaya default untuk tombol yang tidak aktif
                     if (!button.classList.contains("active")) {
                         button.classList.add(
                             "bg-slate-700",
@@ -445,22 +441,18 @@
                     button.addEventListener("click", () => {
                         const targetId = button.getAttribute("data-target");
 
-                        // Nonaktifkan semua tab
                         tabButtons.forEach((btn) => {
                             btn.classList.remove("active");
                             btn.classList.add("bg-slate-700");
                         });
 
-                        // Aktifkan tab yang diklik
                         button.classList.add("active");
                         button.classList.remove("bg-slate-700");
 
-                        // Sembunyikan semua konten kode
                         codeContainers.forEach((container) => {
                             container.style.display = "none";
                         });
 
-                        // Tampilkan konten yang sesuai
                         const targetContainer =
                             document.getElementById(targetId);
                         if (targetContainer) {
@@ -470,7 +462,6 @@
                 });
             }
 
-            // Panggil fungsi inisialisasi setelah DOM dimuat
             document.addEventListener("DOMContentLoaded", initTabs);
         </script>
     </body>
