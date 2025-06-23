@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis: Aplikasi Perpustakaan (Final & Lengkap)</title>
+    <title>Infografis: Aplikasi Perpustakaan (Final - Tanpa Komentar)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,6 @@
         .code-keyword { color: #93c5fd; } /* blue-300 */
         .code-class { color: #6ee7b7; } /* emerald-300 */
         .code-string { color: #fde047; } /* yellow-300 */
-        .code-comment { color: #94a3b8; } /* slate-400 */
         .code-method { color: #a5b4fc; } /* indigo-300 */
         .code-annotation { color: #f472b6; } /* pink-400 */
         .code-generic { color: #f0abfc; } /* fuchsia-300 */
@@ -63,7 +62,6 @@
                     </ul>
                 </div>
                 
-                <!-- DIAGRAM ARSITEKTUR DIKEMBALIKAN! -->
                 <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700">
                     <h2 class="text-2xl font-bold mb-6 text-emerald-400 flex items-center">
                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
@@ -125,14 +123,12 @@
 
                     <div id="code-content">
                         <div id="code-displayable" class="code-container">
-                            <pre class="code-block"><code class="language-java">
-<span class="code-keyword">public interface</span> <span class="code-class">Displayable</span> {
+                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public interface</span> <span class="code-class">Displayable</span> {
     <span class="code-keyword">void</span> <span class="code-method">displayDetails</span>();
 }</code></pre>
                         </div>
                         <div id="code-item" class="code-container" style="display:none;">
-                           <pre class="code-block"><code class="language-java">
-<span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> <span class="code-keyword">implements</span> <span class="code-class">Displayable</span> {
+                           <pre class="code-block"><code class="language-java"><span class="code-keyword">public abstract class</span> <span class="code-class">LibraryItem</span> <span class="code-keyword">implements</span> <span class="code-class">Displayable</span> {
     <span class="code-keyword">private static int</span> totalItems = 0;
     <span class="code-keyword">protected</span> <span class="code-class">String</span> id;
     <span class="code-keyword">protected</span> <span class="code-class">String</span> title;
@@ -142,8 +138,12 @@
         <span class="code-keyword">this</span>.title = title;
         totalItems++;
     }
+    
     <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>();
-    <span class="code-keyword">public static int</span> <span class="code-method">getTotalItems</span>() { <span class="code-keyword">return</span> totalItems; }
+    
+    <span class="code-keyword">public static int</span> <span class="code-method">getTotalItems</span>() {
+        <span class="code-keyword">return</span> totalItems;
+    }
     
     <span class="code-annotation">@Override</span>
     <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
@@ -154,15 +154,16 @@
 }</code></pre>
                         </div>
                         <div id="code-shelf" class="code-container" style="display:none;">
-                            <pre class="code-block"><code class="language-java">
-<span class="code-keyword">import</span> java.util.ArrayList;
+                            <pre class="code-block"><code class="language-java"><span class="code-keyword">import</span> java.util.ArrayList;
 <span class="code-keyword">import</span> java.util.List;
 
 <span class="code-keyword">public class</span> <span class="code-class">Shelf</span>&lt;<span class="code-generic">T</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span>&gt; {
     <span class="code-keyword">private</span> <span class="code-class">List</span>&lt;<span class="code-generic">T</span>&gt; itemsOnShelf = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
     <span class="code-keyword">private</span> <span class="code-class">String</span> shelfName;
 
-    <span class="code-keyword">public</span> <span class="code-method">Shelf</span>(<span class="code-class">String</span> shelfName) { <span class="code-keyword">this</span>.shelfName = shelfName; }
+    <span class="code-keyword">public</span> <span class="code-method">Shelf</span>(<span class="code-class">String</span> shelfName) {
+        <span class="code-keyword">this</span>.shelfName = shelfName;
+    }
 
     <span class="code-keyword">public void</span> <span class="code-method">addItems</span>(<span class="code-generic">T</span>... items) {
         <span class="code-keyword">for</span> (<span class="code-generic">T</span> item : items) {
@@ -182,12 +183,17 @@
                         <div id="code-book" class="code-container" style="display:none;">
                             <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">Book</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span> {
     <span class="code-keyword">private</span> <span class="code-class">String</span> author;
+
     <span class="code-keyword">public</span> <span class="code-method">Book</span>(<span class="code-class">String</span> id, <span class="code-class">String</span> title, <span class="code-class">String</span> author) {
         <span class="code-keyword">super</span>(id, title);
         <span class="code-keyword">this</span>.author = author;
     }
+
     <span class="code-annotation">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>(){ <span class="code-keyword">return</span> <span class="code-string">"Book"</span>; }
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Book"</span>;
+    }
+
     <span class="code-annotation">@Override</span>
     <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
         <span class="code-keyword">super</span>.<span class="code-method">displayDetails</span>();
@@ -198,12 +204,17 @@
                          <div id="code-magazine" class="code-container" style="display:none;">
                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">Magazine</span> <span class="code-keyword">extends</span> <span class="code-class">LibraryItem</span> {
     <span class="code-keyword">private int</span> issueNumber;
+
     <span class="code-keyword">public</span> <span class="code-method">Magazine</span>(<span class="code-class">String</span> id, <span class="code-class">String</span> title, <span class="code-keyword">int</span> issueNumber) {
         <span class="code-keyword">super</span>(id, title);
         <span class="code-keyword">this</span>.issueNumber = issueNumber;
     }
+
     <span class="code-annotation">@Override</span>
-    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>(){ <span class="code-keyword">return</span> <span class="code-string">"Magazine"</span>; }
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Magazine"</span>;
+    }
+
     <span class="code-annotation">@Override</span>
     <span class="code-keyword">public void</span> <span class="code-method">displayDetails</span>() {
         <span class="code-keyword">super</span>.<span class="code-method">displayDetails</span>();
@@ -212,8 +223,7 @@
 }</code></pre>
                         </div>
                         <div id="code-main" class="code-container" style="display:none;">
-                            <pre class="code-block"><code class="language-java">
-<span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
+                            <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
     <span class="code-keyword">public static final</span> <span class="code-class">String</span> LIBRARY_NAME = <span class="code-string">"The Digital Athenaeum"</span>;
 
     <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
