@@ -139,6 +139,10 @@
         totalItems++;
     }
     
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getTitle</span>() {
+        <span class="code-keyword">return</span> title;
+    }
+    
     <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getItemType</span>();
     
     <span class="code-keyword">public static int</span> <span class="code-method">getTotalItems</span>() {
@@ -225,6 +229,15 @@
                         <div id="code-main" class="code-container" style="display:none;">
                             <pre class="code-block"><code class="language-java"><span class="code-keyword">public class</span> <span class="code-class">LibraryManager</span> {
     <span class="code-keyword">public static final</span> <span class="code-class">String</span> LIBRARY_NAME = <span class="code-string">"The Digital Athenaeum"</span>;
+    <span class="code-keyword">public static final int</span> MAX_LEND_DAYS = 14;
+    
+    <span class="code-keyword">public void</span> <span class="code-method">lendItem</span>(<span class="code-class">LibraryItem</span> item) {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"'"</span> + item.<span class="code-method">getTitle</span>() + <span class="code-string">"' dipinjam selama "</span> + MAX_LEND_DAYS + <span class="code-string">" hari."</span>);
+    }
+
+    <span class="code-keyword">public void</span> <span class="code-method">lendItem</span>(<span class="code-class">LibraryItem</span> item, <span class="code-keyword">int</span> customDays) {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"'"</span> + item.<span class="code-method">getTitle</span>() + <span class="code-string">"' dipinjam selama "</span> + customDays + <span class="code-string">" hari (permintaan khusus)."</span>);
+    }
 
     <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Selamat datang di "</span> + LIBRARY_NAME);
@@ -233,18 +246,22 @@
         <span class="code-class">Shelf</span>&lt;<span class="code-class">Book</span>&gt; bookShelf = <span class="code-keyword">new</span> <span class="code-class">Shelf</span>&lt;&gt;(<span class="code-string">"Fiksi & Petualangan"</span>);
         <span class="code-class">Shelf</span>&lt;<span class="code-class">Magazine</span>&gt; magazineRack = <span class="code-keyword">new</span> <span class="code-class">Shelf</span>&lt;&gt;(<span class="code-string">"Sains & Pengetahuan"</span>);
         
-        bookShelf.<span class="code-method">addItems</span>(
-            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-001"</span>, <span class="code-string">"The Gobbit"</span>, <span class="code-string">"J.R.R. Tokek"</span>),
-            <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-002"</span>, <span class="code-string">"Garry Potter"</span>, <span class="code-string">"Adam Yes"</span>)
-        );
+        <span class="code-class">Book</span> book1 = <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-001"</span>, <span class="code-string">"The Gobbit"</span>, <span class="code-string">"J.R.R. Tokek"</span>);
+        <span class="code-class">Book</span> book2 = <span class="code-keyword">new</span> <span class="code-class">Book</span>(<span class="code-string">"BK-002"</span>, <span class="code-string">"Garry Potter"</span>, <span class="code-string">"Adam Yes"</span>);
+        bookShelf.<span class="code-method">addItems</span>(book1, book2);
 
-        magazineRack.<span class="code-method">addItems</span>(
-            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-001"</span>, <span class="code-string">"National Geographic"</span>, 142),
-            <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-002"</span>, <span class="code-string">"Scientific Lemurian"</span>, 329)
-        );
+        <span class="code-class">Magazine</span> mag1 = <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-001"</span>, <span class="code-string">"National Geographic"</span>, 142);
+        <span class="code-class">Magazine</span> mag2 = <span class="code-keyword">new</span> <span class="code-class">Magazine</span>(<span class="code-string">"MG-002"</span>, <span class="code-string">"Scientific Lemurian"</span>, 329);
+        magazineRack.<span class="code-method">addItems</span>(mag1, mag2);
 
         bookShelf.<span class="code-method">displayShelfContents</span>();
         magazineRack.<span class="code-method">displayShelfContents</span>();
+        
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"================================="</span>);
+        
+        <span class="code-class">LibraryManager</span> manager = <span class="code-keyword">new</span> <span class="code-class">LibraryManager</span>();
+        manager.<span class="code-method">lendItem</span>(book1);
+        manager.<span class="code-method">lendItem</span>(mag2, 5);
         
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"================================="</span>);
         System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Total koleksi di sistem: "</span> + <span class="code-class">LibraryItem</span>.<span class="code-method">getTotalItems</span>());
