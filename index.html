@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CobaCoba: Struktur Aplikasi Java</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            .code-block {
+                background-color: #1e293b; /* slate-800 */
+                color: #e2e8f0; /* slate-200 */
+                border-radius: 0.5rem;
+                padding: 1rem;
+                overflow-x: auto;
+                font-size: 0.875rem;
+            }
+            .code-keyword {
+                color: #93c5fd;
+            } /* blue-300 */
+            .code-class {
+                color: #6ee7b7;
+            } /* emerald-300 */
+            .code-string {
+                color: #fde047;
+            } /* yellow-300 */
+            .code-comment {
+                color: #94a3b8;
+            } /* slate-400 */
+            .code-method {
+                color: #a5b4fc;
+            } /* indigo-300 */
+            .tab-btn.active {
+                background-color: #3b82f6; /* blue-600 */
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body class="bg-slate-900 text-slate-200">
+        <div class="container mx-auto p-4 md:p-8">
+            <!-- Judul Utama -->
+            <header class="text-center mb-12">
+                <h1
+                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 text-transparent bg-clip-text"
+                >
+                    Struktur Aplikasi Konsol Java
+                </h1>
+                <p class="mt-4 text-lg text-slate-400">
+                    Visualisasi Arsitektur Proyek Manajemen Entitas Digital
+                </p>
+            </header>
+
+            <main class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- Kolom Kiri: Arsitektur dan Komponen -->
+                <div class="lg:col-span-2 flex flex-col gap-8">
+                    <!-- Card: Komponen Utama -->
+                    <div
+                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700"
+                    >
+                        <h2
+                            class="text-2xl font-bold mb-4 text-emerald-400 flex items-center"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                                />
+                            </svg>
+                            Komponen Proyek
+                        </h2>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span
+                                    class="w-3 h-3 bg-green-400 rounded-full mr-3"
+                                ></span
+                                ><code class="text-green-300">Aksi.java</code>
+                                (Interface)
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-3 h-3 bg-sky-400 rounded-full mr-3"
+                                ></span
+                                ><code class="text-sky-300">Entitas.java</code>
+                                (Abstract Class)
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-3 h-3 bg-violet-400 rounded-full mr-3"
+                                ></span
+                                ><code class="text-violet-300"
+                                    >Pahlawan.java</code
+                                >
+                                (Class)
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-3 h-3 bg-violet-400 rounded-full mr-3"
+                                ></span
+                                ><code class="text-violet-300">Bot.java</code>
+                                (Class)
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-3 h-3 bg-amber-400 rounded-full mr-3"
+                                ></span
+                                ><code class="text-amber-300"
+                                    >ManajemenEntitas.java</code
+                                >
+                                (Main Class)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card: Diagram Arsitektur -->
+                    <div
+                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700"
+                    >
+                        <h2
+                            class="text-2xl font-bold mb-6 text-emerald-400 flex items-center"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                />
+                            </svg>
+                            Diagram Arsitektur
+                        </h2>
+                        <div class="relative text-center text-sm font-mono">
+                            <div
+                                class="p-3 border-2 border-dashed border-green-400 rounded-lg inline-block"
+                            >
+                                Aksi (Interface)
+                            </div>
+
+                            <div class="my-4 flex justify-center">
+                                <svg
+                                    class="w-4 h-12 text-slate-500"
+                                    fill="none"
+                                    viewBox="0 0 10 50"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M5 48V2M2 5l3-3 3 3"
+                                    />
+                                </svg>
+                            </div>
+
+                            <div
+                                class="p-3 border-2 border-sky-400 rounded-lg inline-block bg-sky-900/50"
+                            >
+                                Entitas (Abstract)
+                            </div>
+
+                            <div
+                                class="absolute w-full mt-4 flex justify-between items-center top-full left-0 px-4"
+                            >
+                                <svg
+                                    class="w-16 h-12 text-slate-500 transform -scale-x-100"
+                                    fill="none"
+                                    viewBox="0 0 70 50"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3"
+                                    />
+                                </svg>
+                                <svg
+                                    class="w-16 h-12 text-slate-500"
+                                    fill="none"
+                                    viewBox="0 0 70 50"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M2 25h40C55 25 55 2 68 2M65 5l3-3-3-3"
+                                    />
+                                </svg>
+                            </div>
+
+                            <div class="mt-20 grid grid-cols-2 gap-4">
+                                <div
+                                    class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
+                                >
+                                    Pahlawan
+                                </div>
+                                <div
+                                    class="p-3 border-2 border-violet-400 rounded-lg bg-violet-900/50"
+                                >
+                                    Bot
+                                </div>
+                            </div>
+                            <div class="mt-4 text-slate-500 text-xs italic">
+                                extends
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Kode Sumber -->
+                <div class="lg:col-span-3 flex flex-col">
+                    <div
+                        class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-slate-700 h-full"
+                    >
+                        <h2
+                            class="text-2xl font-bold mb-4 text-emerald-400 flex items-center"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                />
+                            </svg>
+                            Kode Sumber
+                        </h2>
+
+                        <!-- Tab Buttons -->
+                        <div
+                            class="flex flex-wrap gap-2 mb-4 border-b border-slate-700 pb-2"
+                        >
+                            <button
+                                class="tab-btn px-4 py-2 text-sm rounded-md bg-slate-700 hover:bg-blue-600 transition-colors duration-200"
+                                data-target="code-aksi"
+                            >
+                                Aksi.java
+                            </button>
+                            <button class="tab-btn" data-target="code-entitas">
+                                Entitas.java
+                            </button>
+                            <button class="tab-btn" data-target="code-pahlawan">
+                                Pahlawan.java
+                            </button>
+                            <button class="tab-btn" data-target="code-bot">
+                                Bot.java
+                            </button>
+                            <button class="tab-btn" data-target="code-main">
+                                ManajemenEntitas.java
+                            </button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div id="code-content">
+                            <div id="code-aksi" class="code-container">
+                                <pre
+                                    class="code-block"
+                                ><code class="language-java"><span class="code-comment">// Aksi.java - Mendefinisikan kontrak atau kemampuan dasar entitas</span>
+<span class="code-keyword">public interface</span> <span class="code-class">Aksi</span> {
+    <span class="code-keyword">void</span> <span class="code-method">tampilkanStatus</span>();
+    <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>();
+}</code></pre>
+                            </div>
+                            <div
+                                id="code-entitas"
+                                class="code-container"
+                                style="display: none"
+                            >
+                                <pre
+                                    class="code-block"
+                                ><code class="language-java"><span class="code-comment">// Entitas.java - Kelas dasar abstrak untuk semua entitas</span>
+<span class="code-keyword">public abstract class</span> <span class="code-class">Entitas</span> <span class="code-keyword">implements</span> <span class="code-class">Aksi</span> {
+    <span class="code-keyword">protected</span> <span class="code-class">String</span> nama;
+    <span class="code-keyword">protected int</span> level;
+
+    <span class="code-keyword">public</span> <span class="code-method">Entitas</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level) {
+        <span class="code-keyword">this</span>.nama = nama;
+        <span class="code-keyword">this</span>.level = level;
+    }
+
+    <span class="code-comment">// Metode abstract, harus diimplementasikan oleh anak kelas</span>
+    <span class="code-keyword">public abstract</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>();
+
+    <span class="code-keyword">@Override</span>
+    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Nama   : "</span> + <span class="code-keyword">this</span>.nama);
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Level  : "</span> + <span class="code-keyword">this</span>.level);
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Tipe   : "</span> + <span class="code-keyword">this</span>.<span class="code-method">getTipeEntitas</span>());
+    }
+}</code></pre>
+                            </div>
+                            <div
+                                id="code-pahlawan"
+                                class="code-container"
+                                style="display: none"
+                            >
+                                <pre
+                                    class="code-block"
+                                ><code class="language-java"><span class="code-comment">// Pahlawan.java - Kelas konkret turunan dari Entitas</span>
+<span class="code-keyword">public class</span> <span class="code-class">Pahlawan</span> <span class="code-keyword">extends</span> <span class="code-class">Entitas</span> {
+    <span class="code-keyword">private</span> <span class="code-class">String</span> senjata;
+
+    <span class="code-keyword">public</span> <span class="code-method">Pahlawan</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level, <span class="code-class">String</span> senjata) {
+        <span class="code-keyword">super</span>(nama, level);
+        <span class="code-keyword">this</span>.senjata = senjata;
+    }
+
+    <span class="code-keyword">@Override</span>
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Pahlawan"</span>;
+    }
+
+    <span class="code-keyword">@Override</span>
+    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">tampilkanStatus</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Senjata: "</span> + <span class="code-keyword">this</span>.senjata);
+    }
+}</code></pre>
+                            </div>
+                            <div
+                                id="code-bot"
+                                class="code-container"
+                                style="display: none"
+                            >
+                                <pre
+                                    class="code-block"
+                                ><code class="language-java"><span class="code-comment">// Bot.java - Kelas konkret turunan dari Entitas</span>
+<span class="code-keyword">public class</span> <span class="code-class">Bot</span> <span class="code-keyword">extends</span> <span class="code-class">Entitas</span> {
+    <span class="code-keyword">private</span> <span class="code-class">String</span> idBot;
+
+    <span class="code-keyword">public</span> <span class="code-method">Bot</span>(<span class="code-class">String</span> nama, <span class="code-keyword">int</span> level, <span class="code-class">String</span> idBot) {
+        <span class="code-keyword">super</span>(nama, level);
+        <span class="code-keyword">this</span>.idBot = idBot;
+    }
+
+    <span class="code-keyword">@Override</span>
+    <span class="code-keyword">public</span> <span class="code-class">String</span> <span class="code-method">getTipeEntitas</span>() {
+        <span class="code-keyword">return</span> <span class="code-string">"Bot"</span>;
+    }
+
+    <span class="code-keyword">@Override</span>
+    <span class="code-keyword">public void</span> <span class="code-method">tampilkanStatus</span>() {
+        <span class="code-keyword">super</span>.<span class="code-method">tampilkanStatus</span>();
+        System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"Bot ID : "</span> + <span class="code-keyword">this</span>.idBot);
+    }
+}</code></pre>
+                            </div>
+                            <div
+                                id="code-main"
+                                class="code-container"
+                                style="display: none"
+                            >
+                                <pre
+                                    class="code-block"
+                                ><code class="language-java"><span class="code-comment">// ManajemenEntitas.java - Titik masuk utama aplikasi</span>
+<span class="code-keyword">import</span> java.util.ArrayList;
+<span class="code-keyword">import</span> java.util.List;
+
+<span class="code-keyword">public class</span> <span class="code-class">ManajemenEntitas</span> {
+    <span class="code-keyword">public static void</span> <span class="code-method">main</span>(<span class="code-class">String</span>[] args) {
+        <span class="code-comment">// Polimorfisme: Pahlawan dan Bot disimpan sebagai Entitas</span>
+        <span class="code-class">Entitas</span> pahlawan1 = <span class="code-keyword">new</span> <span class="code-class">Pahlawan</span>(<span class="code-string">"Aragorn"</span>, 50, <span class="code-string">"Anduril"</span>);
+        <span class="code-class">Entitas</span> bot1 = <span class="code-keyword">new</span> <span class="code-class">Bot</span>(<span class="code-string">"Sentry-01"</span>, 99, <span class="code-string">"BOT-A8B3"</span>);
+
+        <span class="code-class">List</span>&lt;<span class="code-class">Entitas</span>&gt; daftarEntitas = <span class="code-keyword">new</span> <span class="code-class">ArrayList</span>&lt;&gt;();
+        daftarEntitas.<span class="code-method">add</span>(pahlawan1);
+        daftarEntitas.<span class="code-method">add</span>(bot1);
+
+        <span class="code-keyword">for</span> (<span class="code-class">Entitas</span> entitas : daftarEntitas) {
+            entitas.<span class="code-method">tampilkanStatus</span>();
+            System.<span class="code-method">out</span>.<span class="code-method">println</span>(<span class="code-string">"-----------------"</span>);
+        }
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            // Logika untuk fungsionalitas Tab
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const codeContainers = document.querySelectorAll(".code-container");
+
+            // Fungsi untuk menginisialisasi tab
+            function initTabs() {
+                // Menetapkan tab pertama sebagai aktif secara default
+                const firstButton = tabButtons[0];
+                const firstContainerId =
+                    firstButton.getAttribute("data-target");
+                const firstContainer =
+                    document.getElementById(firstContainerId);
+
+                firstButton.classList.add("active");
+                if (firstContainer) {
+                    firstContainer.style.display = "block";
+                }
+
+                // Menambahkan event listener ke semua tombol tab
+                tabButtons.forEach((button) => {
+                    // Atur gaya default untuk tombol yang tidak aktif
+                    if (!button.classList.contains("active")) {
+                        button.classList.add(
+                            "bg-slate-700",
+                            "hover:bg-blue-600",
+                            "transition-colors",
+                            "duration-200",
+                            "px-4",
+                            "py-2",
+                            "text-sm",
+                            "rounded-md",
+                        );
+                    }
+
+                    button.addEventListener("click", () => {
+                        const targetId = button.getAttribute("data-target");
+
+                        // Nonaktifkan semua tab
+                        tabButtons.forEach((btn) => {
+                            btn.classList.remove("active");
+                            btn.classList.add("bg-slate-700");
+                        });
+
+                        // Aktifkan tab yang diklik
+                        button.classList.add("active");
+                        button.classList.remove("bg-slate-700");
+
+                        // Sembunyikan semua konten kode
+                        codeContainers.forEach((container) => {
+                            container.style.display = "none";
+                        });
+
+                        // Tampilkan konten yang sesuai
+                        const targetContainer =
+                            document.getElementById(targetId);
+                        if (targetContainer) {
+                            targetContainer.style.display = "block";
+                        }
+                    });
+                });
+            }
+
+            // Panggil fungsi inisialisasi setelah DOM dimuat
+            document.addEventListener("DOMContentLoaded", initTabs);
+        </script>
+    </body>
+</html>
